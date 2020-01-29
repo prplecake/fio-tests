@@ -1,6 +1,13 @@
-; random read of 128mb of data
+; random read of 512M of data
 
 [random-read]
 rw=randread
-size=128m
+size=512M
 directory=/tmp/fio-testing/data
+iodepth=16
+bs=4k
+direct=0
+ioengine=libaio
+runtime=240
+numjobs=4
+group_reporting=1
